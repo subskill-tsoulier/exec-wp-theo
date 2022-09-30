@@ -345,49 +345,6 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'twenty_twenty_one_setup' );
 
-
-/**
- * @author ØñK
- * 
- * @since 29 Sept 2022
- */
-function skwp_theo_create_post_type() {
-
-	$labels = array(
-		'name' => 'Magasins',
-		'menu_name' => 'Magasins'
-	);
-
-	$args = array(
-		'labels' => $labels,
-		'public' => false,
-		'supports' => array( 'title', 'thumbnail' ),
-		'menu_position' => 6,
-		'show_ui' => true,
-		'menu_icon' => 'dashicons-heart',
-	);
-
-	register_post_type( 'magasins', $args );
-
-	$labels = array(
-		'name' => 'Emplacements',
-		'menu_name' => 'Emplacements'
-	);
-
-	$args = array(
-		'labels' => $labels,
-		'public' => false,
-		'supports' => array( 'title' ),
-		'menu_position' => 7,
-		'show_ui' => true,
-		'menu_icon' => 'dashicons-location',
-	);
-
-	register_post_type( 'location', $args );
-}
-
-add_action( 'init', 'skwp_theo_create_post_type' );
-
 /**
  * Register widget area.
  *
